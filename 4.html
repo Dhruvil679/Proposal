@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ask Her Out</title>
+
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div
+        class="tenor-gif-embed"
+        data-postid="15974530976611222074"
+        data-share-method="host"
+        data-aspect-ratio="1.26923"
+        data-width="100%"
+      >
+        <a
+          href="https://tenor.com/view/peach-goma-phone-gif-15974530976611222074"
+          >Peach Goma Phone Sticker</a
+        >from
+        <a href="https://tenor.com/search/peach+goma-stickers"
+          >Peach Goma Stickers</a
+        >
+      </div>
+
+      <h1>Manja na! Kitna bhav khaegi 😭</h1>
+      <p>bht glt baat hai 😭</p>
+
+      <div class="btn">
+        <a href="5.html">Yes</a>
+        <a href="#" id="noButton">No</a>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const noButton = document.getElementById("noButton");
+        const container = document.querySelector(".container");
+        
+        // Set the position property so we can change its position
+        noButton.style.position = "absolute";
+
+        // Add event listener for touch events
+        noButton.addEventListener("touchstart", function (e) {
+          // Prevent default to avoid accidental navigation
+          e.preventDefault();
+          
+          // Get container dimensions
+          const containerRect = container.getBoundingClientRect();
+          // Get button dimensions
+          const buttonRect = noButton.getBoundingClientRect();
+
+          // Calculate maximum x and y positions (ensure button stays inside container)
+          const maxX = containerRect.width - buttonRect.width;
+          const maxY = containerRect.height - buttonRect.height;
+
+          // Generate random positions
+          const randomX = Math.random() * maxX;
+          const randomY = Math.random() * maxY;
+
+          // Apply new position
+          noButton.style.left = randomX + "px";
+          noButton.style.top = randomY + "px";
+        });
+
+        // (Optional) Also make it move on mouseover for desktop users
+        noButton.addEventListener("mouseover", function (e) {
+          const containerRect = container.getBoundingClientRect();
+          const buttonRect = noButton.getBoundingClientRect();
+          const maxX = containerRect.width - buttonRect.width;
+          const maxY = containerRect.height - buttonRect.height;
+          const randomX = Math.random() * maxX;
+          const randomY = Math.random() * maxY;
+          noButton.style.left = randomX + "px";
+          noButton.style.top = randomY + "px";
+        });
+      });
+    </script>
+
+  </body>
+</html>
